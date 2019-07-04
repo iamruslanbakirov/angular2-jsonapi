@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import find from 'lodash-es/find';
-import { map, catchError } from 'rxjs/operators';
-import { throwError, of, Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
 import { JsonApiModel } from '../models/json-api.model';
 import { ErrorResponse } from '../models/error-response.model';
 import { JsonApiQueryData } from '../models/json-api-query-data';
@@ -122,8 +122,10 @@ export class JsonApiDatastore {
     const modelType = <ModelType<T>>model.constructor;
     const modelConfig: ModelConfig = model.modelConfig;
     const typeName: string = modelConfig.type;
+    const singleRecord = modelConfig.single || false;
     const relationships: any = this.getRelationships(model);
-    const url: string = this.buildUrl(modelType, params, model.id, customUrl);
+
+    const url: string = this.buildUrl(modelType, params, !singleRecord ? model.id : undefined, customUrl);
 
     let httpCall: Observable<HttpResponse<object>>;
     const body: any = {
