@@ -14,12 +14,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ghidoz/angular2-jsonapi"
+    "url": "https://github.com/iamruslanbakirov/angular2-jsonapi"
   },
   "author": {
     "name": "Daniele Ghidoli",
     "url": "http://danieleghidoli.it"
   },
+  "maintainers": [
+    {
+      "name": "Ruslan Bakirov",
+      "bakirovruslanr@gmail.com"
+    }
+  ],
   "keywords": [
     "angular",
     "angular2",
@@ -29,7 +35,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ghidoz/angular2-jsonapi/issues"
+    "url": "https://github.com/iamruslanbakirov/angular2-jsonapi/issues"
   },
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
