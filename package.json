@@ -1,5 +1,6 @@
 {
-  "name": "angular2-jsonapi",
+  "name": "@pacific_monkey/angular2-jsonapi",
+  "scope": "@pacific_monkey",
   "version": "7.0.0",
   "description": "A lightweight Angular 2 adapter for JSON API",
   "scripts": {
